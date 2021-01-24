@@ -132,3 +132,15 @@ NPuzzleSolver.prototype.moveNumberTowards = function(num, dest) {
 	this.makeEmptyNeighborTo(num);
 	// now empty will be next to our number and thats all we need
 	var counter = 1;
+	while(this.numbers[num].x != dest.x || this.numbers[num].y != dest.y) {
+		var direction = this.getDirectionToProceed(num, dest);
+		if(!this.areNeighbors(num, "")) {
+			throw "cannot rotate without empty";
+		}
+		if(direction == "u" || direction == "d") {
+			this.rotateVertical(num, (direction == "u"));
+		} else {
+			this.rotateHorizontal(num, (direction == "l"));
+		}
+	}
+}
