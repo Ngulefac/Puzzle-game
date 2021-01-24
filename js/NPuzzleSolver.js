@@ -191,3 +191,9 @@ NPuzzleSolver.prototype.rotateVertical = function(num, upDirection) {
 	var pos = this.numbers[num];
 	if(empty.x != pos.x) {
 		// its to the right or left
+		var side = (empty.x < pos.x) ? "l" : "r";
+		if(!this.moveable(this.offsetPosition(pos, toward + side)) || !this.moveable(this.offsetPosition(pos, side))) {
+			this.swapE(this.offsetPosition(pos, away + side));
+			this.swapE(this.offsetPosition(pos, away));
+			this.proper2By3RotationVertical(pos, upDirection);
+		} 
