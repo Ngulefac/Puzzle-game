@@ -256,3 +256,7 @@ h1 {
 .win-controls__retry:after {
     content: "↺";
 }
+
+.win-controls__next:after {
+    content: "▶";
+}
