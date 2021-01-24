@@ -254,3 +254,8 @@ NPuzzleSolver.prototype.specialLeftBottomRotation = function(left) {
 	this.fixed[this.grid.length - 1][left + 1] = false;
 	this.fixed[leftBottom.y - 1][leftBottom.x] = true;
 }
+
+NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
+	var cur = this.numbers[num];
+	var diffx = dest.x - cur.x;
+	var diffy = dest.y - cur.y;
