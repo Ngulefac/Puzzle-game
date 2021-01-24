@@ -108,3 +108,8 @@ NPuzzleSolver.prototype.solveColumn = function(size) {
 		this.applyRelativeMoveList(pos, moveList);
 		// now the order has been officially reversed
 	}
+	
+	// do the special
+	this.specialLeftBottomRotation(colNumber);
+	// now the column is solved
+}
