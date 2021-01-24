@@ -240,3 +240,17 @@ NPuzzleSolver.prototype.specialTopRightRotation = function(top) {
 	this.fixed[top + 1][this.grid.length - 1] = false;
 	this.fixed[topRight.y][topRight.x - 1] = true;
 }
+
+NPuzzleSolver.prototype.specialLeftBottomRotation = function(left) {
+	// lock the two pieces
+	this.fixed[this.grid.length - 1][left] = true;
+	this.fixed[this.grid.length - 1][left + 1] = true;
+	// preform the swap
+	var leftBottom = { x : left, y : this.grid.length - 1};
+	this.moveEmptyTo(this.offsetPosition(leftBottom, "u"));
+	this.swapE(leftBottom);
+	this.swapE(this.offsetPosition(leftBottom, "r"));
+	// lock proper pieces and unlock extras from next column
+	this.fixed[this.grid.length - 1][left + 1] = false;
+	this.fixed[leftBottom.y - 1][leftBottom.x] = true;
+}
