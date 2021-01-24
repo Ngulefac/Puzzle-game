@@ -318,3 +318,10 @@ input[type="button"] {
     background: steelblue;
     color: white;
     font-size: 18px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 100%;
+ 
+    margin: 5px;
+}
