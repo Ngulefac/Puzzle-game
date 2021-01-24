@@ -316,3 +316,6 @@ NPuzzleSolver.prototype.movingEmptyLoop = function(pos) {
 		this.swap(empty, this.offsetPosition(empty, "u"));
 	}
 }
+
+NPuzzleSolver.prototype.offsetPosition = function(pos, direction) {
+	if(direction == "u")
