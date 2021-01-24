@@ -1,6 +1,3 @@
-// NPuzzleSolver
-// by Ngulefac Theophilus
-// repository: https://github.com/Ngulefac/Puzzle-game
 
 function NPuzzleSolver(toSolve) {
 	this.grid = [];
@@ -43,8 +40,7 @@ NPuzzleSolver.prototype.solveGrid = function(size) {
 		this.solveRow(size); // solve the upper row first
 		this.solveColumn(size); // solve the left column next
 		this.solveGrid(size - 1); // now we can solve the sub (n-1)x(n-1) puzzle
-	} 
-else if(size == 2) {
+	} else if(size == 2) {
 		this.solveRow(size); // solve the row like normal
 		// rotate last two numbers if they arent in place
 		if(this.grid[this.grid.length - 1][this.grid.length - size] === "") {
@@ -80,6 +76,11 @@ NPuzzleSolver.prototype.solveRow = function(size) {
 			this.applyRelativeMoveList(pos, moveList);
 			// now we reversed them, the puzzle is solveable!
 		}
+	// do the special
+	this.specialTopRightRotation(rowNumber);
+	// now the row has been solved :D
+}
+
 NPuzzleSolver.prototype.solveColumn = function(size) {
 	var colNumber = this.grid.length - size;
 	// use column number as this is the starting row
@@ -168,6 +169,7 @@ NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
 	// now it is in the direction we want to go so just swap
 	this.swapE(pos);
 }
+
 NPuzzleSolver.prototype.proper3By2RotationHorizontal = function(pos, leftDirection) {
 	var side = (leftDirection) ? "l" : "r";
 	var other = (leftDirection) ? "r" : "l";
@@ -196,4 +198,31 @@ NPuzzleSolver.prototype.rotateVertical = function(num, upDirection) {
 			this.swapE(this.offsetPosition(pos, away + side));
 			this.swapE(this.offsetPosition(pos, away));
 			this.proper2By3RotationVertical(pos, upDirection);
-		} 
+		} else {
+			this.swapE(this.offsetPosition(pos, toward + side));
+			this.swapE(this.offsetPosition(pos, toward));
+		}
+	} else if((empty.y < pos.y && !upDirection) || (empty.y > pos.y && upDirection)) {
+		// its in the opposite direction we want to go
+		this.proper2By3RotationVertical(pos, upDirection);
+	}
+	// now the empty is in the direction we need to go
+	// so just swap with it
+	this.swapE(pos);
+}
+
+NPuzzleSolver.prototype.proper2By3RotationVertical = function(pos, upDirection) {
+	var toward = (upDirection) ? "u" : "d";
+	var away = (upDirection) ? "d" : "u";
+	
+	var side = "r"; // default to right column usage
+	if(this.moveable(this.offsetPosition(pos, toward + "l")) && this.moveable(this.offsetPosition(pos, "l")) && this.moveable(this.offsetPosition(pos, away + "l"))) {
+		side = "l";
+	} else if(!this.moveable(this.offsetPosition(pos, toward + "r")) || !this.moveable(this.offsetPosition(pos, "r")) || !this.moveable(this.offsetPosition(pos, away + "r"))) {
+		throw "Unable to preform move, the puzzle is quite possibly unsolveable";
+	}
+	this.swapE(this.offsetPosition(pos, away + side));
+	this.swapE(this.offsetPosition(pos, side));
+	this.swapE(this.offsetPosition(pos, toward + side));
+	this.swapE(this.offsetPosition(pos, toward));
+}
