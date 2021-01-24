@@ -75,3 +75,8 @@ NPuzzleSolver.prototype.solveRow = function(size) {
 			this.moveNumberTowards(last, { x : this.grid.length - 2, y : rowNumber });
 			this.moveEmptyTo({ x : this.grid.length - 2, y : rowNumber + 1 });
 			// the numbers will be right next to each other
+			var pos = { x : this.grid.length - 1, y : rowNumber + 1}; // square below last one in row
+			var moveList = ["ul", "u", "", "l", "dl", "d", "", "l", "ul", "u", "", "l", "ul", "u", "", "d"];
+			this.applyRelativeMoveList(pos, moveList);
+			// now we reversed them, the puzzle is solveable!
+		}
