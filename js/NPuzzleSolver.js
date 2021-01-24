@@ -52,3 +52,8 @@ else if(size == 2) {
 		}
 	} // smaller than 2 is solved by definition
 }
+
+NPuzzleSolver.prototype.solveRow = function(size) {
+	var rowNumber = this.grid.length - size;
+	// using row number here because this is also our starting column
+	for(var i = rowNumber; i < this.grid.length - 2; i++) 
