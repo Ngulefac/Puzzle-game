@@ -61,3 +61,8 @@ NPuzzleSolver.prototype.solveRow = function(size) {
 		this.moveNumberTowards(number, { x : i, y : rowNumber});
 		this.fixed[rowNumber][i] = true;
 	}
+	var secondToLast = rowNumber * this.grid.length + this.grid.length - 1;
+	var last = secondToLast + 1;
+	// position second to last number
+	this.moveNumberTowards(secondToLast, { x : this.grid.length - 1, y : rowNumber });
+	// position last number
