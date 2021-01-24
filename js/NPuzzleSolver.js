@@ -267,3 +267,7 @@ NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
 	if(diffx > 0 && this.moveable({x : cur.x + 1, y : cur.y})) {
 		return "r";
 	}
+	// case 3, we need to move up
+	if(diffy < 0 && this.moveable({x : cur.x, y : cur.y - 1})) {
+		return "u";
+	}
