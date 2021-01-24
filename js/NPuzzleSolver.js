@@ -123,3 +123,8 @@ NPuzzleSolver.prototype.applyRelativeMoveList = function(pos, list) {
 		}
 	}
 }
+
+NPuzzleSolver.prototype.moveNumberTowards = function(num, dest) {
+	// dont bother if the piece is in the right place, it can cause odd things to happen with the space
+	if(this.numbers[num].x == dest.x && this.numbers[num].y == dest.y) return; // dont bother
+	
