@@ -42,3 +42,6 @@ h1 {
     margin-right: 0;
 }
 
+.controls button:hover {
+    box-shadow: 1px 3px 3px 0 #b9b9b9a8;
+}
