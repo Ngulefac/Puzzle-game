@@ -86,4 +86,9 @@ h1 {
     border: 1px solid tomato;
     border-radius: 50%;
     width: 36px;
-    height: 36px;
+    height: 36px; top: -18px;
+    right: -18px;
+    background: white;
+    box-sizing: border-box;
+    transition: all 0.1s linear;
+}
