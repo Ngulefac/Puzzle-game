@@ -38,3 +38,7 @@ h1 {
     margin-left: 0;
 }
 
+.controls button:last-of-type {
+    margin-right: 0;
+}
+
