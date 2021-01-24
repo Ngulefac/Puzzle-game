@@ -226,3 +226,17 @@ NPuzzleSolver.prototype.proper2By3RotationVertical = function(pos, upDirection) 
 	this.swapE(this.offsetPosition(pos, toward + side));
 	this.swapE(this.offsetPosition(pos, toward));
 }
+
+NPuzzleSolver.prototype.specialTopRightRotation = function(top) {
+	// lock the two pieces
+	this.fixed[top][this.grid.length - 1] = true;
+	this.fixed[top + 1][this.grid.length - 1] = true;
+	// preform the swap
+	var topRight = { x : this.grid.length - 1, y : top};
+	this.moveEmptyTo(this.offsetPosition(topRight, "l"));
+	this.swapE(topRight);
+	this.swapE(this.offsetPosition(topRight, "d"));
+	// lock proper pieces and unlock extra from next row
+	this.fixed[top + 1][this.grid.length - 1] = false;
+	this.fixed[topRight.y][topRight.x - 1] = true;
+}
