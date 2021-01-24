@@ -88,3 +88,10 @@ NPuzzleSolver.prototype.solveColumn = function(size) {
 		this.moveNumberTowards(number, { x : colNumber, y : i});
 		this.fixed[i][colNumber] = true;
 	}
+	var secondToLast = (this.grid.length - 2) * this.grid.length + 1 + colNumber;
+	var last = secondToLast + this.grid.length;
+	// position second to last number
+	this.moveNumberTowards(secondToLast, { x : colNumber, y : this.grid.length - 1 });
+	// position last number
+	this.moveNumberTowards(last, { x : colNumber + 1, y : this.grid.length - 1});
+	
