@@ -154,3 +154,8 @@ h1 {
     border-radius: 5px;
     transition: all .1s ease-in;
 }
+.cell {
+    position: absolute;
+    background: white;
+}
+
