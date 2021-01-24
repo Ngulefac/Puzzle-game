@@ -351,3 +351,9 @@ input[type="button"]:active {
     bottom: 0;
     z-index: 2;
 }
+
+.loading:after {
+    content: '↻';
+    display: inline-block;
+    animation: rotating infinite 1s linear;
+}
