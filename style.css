@@ -124,3 +124,10 @@ h1 {
 }
 
 /* Game board and levels */
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 30vw;
+    height: 30vw;
