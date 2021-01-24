@@ -361,3 +361,9 @@ input[type="button"]:active {
 .container .none {
     display: none;
 }
+
+/* Media */
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
