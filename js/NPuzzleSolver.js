@@ -351,3 +351,16 @@ NPuzzleSolver.prototype.moveable = function(pos) {
 NPuzzleSolver.prototype.validPos = function(pos) {
 	return !(pos.x < 0 || pos.x >= this.grid.length || pos.y < 0 || pos.y >= this.grid.length);
 }
+
+NPuzzleSolver.prototype.canSwap = function(pos1, pos2) {
+	if(!this.validPos(pos1) || !this.validPos(pos2)) {
+		return false;
+	}
+	var num1 = this.grid[pos1.y][pos1.x];
+	var num2 = this.grid[pos2.y][pos2.x];
+	if(!this.areNeighbors(num1, num2)) {
+		return false;
+	}
+	// check fixed positions
+	return !(this.fixed[pos1.y][pos1.x] || this.fixed[pos2.y][pos2.x]);
+}
