@@ -347,3 +347,7 @@ NPuzzleSolver.prototype.areNeighbors = function(first, second) {
 NPuzzleSolver.prototype.moveable = function(pos) {
 	return this.validPos(pos) && !this.fixed[pos.y][pos.x];
 }
+
+NPuzzleSolver.prototype.validPos = function(pos) {
+	return !(pos.x < 0 || pos.x >= this.grid.length || pos.y < 0 || pos.y >= this.grid.length);
+}
