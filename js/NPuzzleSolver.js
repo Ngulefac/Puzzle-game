@@ -165,3 +165,6 @@ NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
 		// its on the opposite that we want it on
 		this.proper3By2RotationHorizontal(pos, leftDirection);
 	}
+	// now it is in the direction we want to go so just swap
+	this.swapE(pos);
+}
