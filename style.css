@@ -296,3 +296,12 @@ h1 {
     min-width: 250px;
     left: 50%;
     top: 20vh;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 20px;
+    background: white;
+    border: 2px solid steelblue;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
+}
