@@ -182,3 +182,8 @@ NPuzzleSolver.prototype.proper3By2RotationHorizontal = function(pos, leftDirecti
 	this.swapE(this.offsetPosition(pos, location + side));
 	this.swapE(this.offsetPosition(pos, side));
 }
+
+NPuzzleSolver.prototype.rotateVertical = function(num, upDirection) {
+	var toward = (upDirection) ? "u" : "d";
+	var away = (upDirection) ? "d" : "u";
+	
