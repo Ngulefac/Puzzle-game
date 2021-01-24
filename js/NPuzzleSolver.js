@@ -30,4 +30,10 @@ NPuzzleSolver.prototype.solve = function() {
 	this.setupSolver();
 	try {
 		this.solveGrid(this.grid.length);
-	} 
+	} catch (err) {
+		console.log(err.message);
+		return null;
+	}
+	return this.solution;
+}
+
