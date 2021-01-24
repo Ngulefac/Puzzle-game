@@ -34,3 +34,7 @@ h1 {
     margin: 2px;
 }
 
+.controls button:first-of-type {
+    margin-left: 0;
+}
+
