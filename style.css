@@ -117,3 +117,8 @@ h1 {
 }
 
 /* Leaderboard */
+
+.leaderboard-table {
+    width: 100%;
+    text-align: left;
+}
