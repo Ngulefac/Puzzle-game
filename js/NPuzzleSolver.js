@@ -274,3 +274,15 @@ NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
 	}
 	throw "There is no valid move, the puzzle was incorrectly shuffled";
 }
+
+NPuzzleSolver.prototype.makeEmptyNeighborTo = function(num, boundry) {
+	var gotoPos = this.numbers[num];
+	var counter = 1;
+	while((this.numbers[""].x != gotoPos.x || this.numbers[""].y != gotoPos.y) && !this.areNeighbors("", num)) {
+		this.movingEmptyLoop(gotoPos);
+		counter++;
+		if(counter > 100) {
+			throw "Infinite loop hit while solving the puzzle, it is quite likely this puzzle is invalid";
+		}
+	}
+}
