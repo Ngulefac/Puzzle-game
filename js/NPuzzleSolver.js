@@ -9,7 +9,6 @@ function NPuzzleSolver(toSolve) {
 	this.solution = [];
 	this.originalGrid = toSolve;
 }
-
 NPuzzleSolver.prototype.setupSolver = function() {
 	this.numbers = [];
 	this.fixed = [];
