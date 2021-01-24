@@ -166,3 +166,10 @@ h1 {
     position: relative;
 }
 
+.level__score {
+    font-size: 0.35em;
+    position: absolute;
+    bottom: 5%;
+    text-align: center;
+}
+
