@@ -44,3 +44,11 @@ NPuzzleSolver.prototype.solveGrid = function(size) {
 		this.solveColumn(size); // solve the left column next
 		this.solveGrid(size - 1); // now we can solve the sub (n-1)x(n-1) puzzle
 	} 
+else if(size == 2) {
+		this.solveRow(size); // solve the row like normal
+		// rotate last two numbers if they arent in place
+		if(this.grid[this.grid.length - 1][this.grid.length - size] === "") {
+			this.swapE({ x : this.grid.length - 1, y : this.grid.length - 1});
+		}
+	} // smaller than 2 is solved by definition
+}
