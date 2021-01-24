@@ -313,3 +313,8 @@ h1 {
     margin: 5px;
     font-size: 18px;
 }
+
+input[type="button"] {
+    background: steelblue;
+    color: white;
+    font-size: 18px;
