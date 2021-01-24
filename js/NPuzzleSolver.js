@@ -272,3 +272,5 @@ NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
 		return "u";
 	}
 	}
+	throw "There is no valid move, the puzzle was incorrectly shuffled";
+}
