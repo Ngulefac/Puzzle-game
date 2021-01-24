@@ -318,4 +318,22 @@ NPuzzleSolver.prototype.movingEmptyLoop = function(pos) {
 }
 
 NPuzzleSolver.prototype.offsetPosition = function(pos, direction) {
-	if(direction == "u")
+	if(direction == "u") {
+		return { x : pos.x , y : pos.y - 1 };
+	} else if(direction == "d") {
+		return { x : pos.x , y : pos.y + 1 };
+	} else if(direction == "l") {
+		return { x : pos.x - 1 , y : pos.y };
+	} else if(direction == "r") {
+		return { x : pos.x + 1 , y : pos.y };
+	} else if(direction == "ul") {
+		return { x : pos.x - 1, y : pos.y - 1};
+	} else if(direction == "ur") {
+		return { x : pos.x + 1, y : pos.y - 1};
+	} else if(direction == "dl") {
+		return { x : pos.x - 1, y : pos.y + 1};
+	} else if(direction == "dr") {
+		return { x : pos.x + 1, y : pos.y + 1};
+	}
+	return pos;
+}
