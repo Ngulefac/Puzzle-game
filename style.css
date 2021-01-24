@@ -10,3 +10,11 @@ h1 {
 
 /* Top level "menu" */
 
+.controls div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    min-width: 300px;
+    margin-bottom: 10px;
+}
