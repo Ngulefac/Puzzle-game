@@ -252,3 +252,7 @@ h1 {
 .win-controls__all:after {
     content: "✸";
 }
+
+.win-controls__retry:after {
+    content: "↺";
+}
