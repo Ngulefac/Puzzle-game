@@ -287,3 +287,12 @@ h1 {
 }
 
 /* Sumbit Record Pop-up */
+
+.submit-result {
+    display: block;
+    position: absolute;
+    width: 90%;
+    max-width: 500px;
+    min-width: 250px;
+    left: 50%;
+    top: 20vh;
