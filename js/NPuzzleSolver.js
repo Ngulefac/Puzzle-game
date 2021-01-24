@@ -95,3 +95,16 @@ NPuzzleSolver.prototype.solveColumn = function(size) {
 	// position last number
 	this.moveNumberTowards(last, { x : colNumber + 1, y : this.grid.length - 1});
 	
+	// double check to make sure they are in the right position
+	if(this.numbers[secondToLast].x != colNumber || this.numbers[secondToLast].y != this.grid.length - 1 ||
+			this.numbers[last].x != colNumber + 1 || this.numbers[last].y != this.grid.length - 1) {
+		// this happens because the ordering of the two numbers is reversed, we have to reverse them
+		this.moveNumberTowards(secondToLast, { x : colNumber, y : this.grid.length - 1});
+		this.moveNumberTowards(last, { x : colNumber, y : this.grid.length - 2});
+		this.moveEmptyTo({ x : colNumber + 1, y : this.grid.length - 2});
+		// the numbers will be stacked and the empty should be to the left of the last number
+		var pos = { x : colNumber + 1, y : this.grid.length - 1 };
+		var moveList = ["ul", "l", "", "u", "ur", "r", "", "u", "ul", "l", "", "u", "ul", "l", "", "r"];
+		this.applyRelativeMoveList(pos, moveList);
+		// now the order has been officially reversed
+	}
