@@ -67,4 +67,10 @@ h1 {
     width: 280px;
     position: fixed;
     top: 40px;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 30px 30px 30px;
+    box-sizing: content-box;
+    border: 2px solid steelblue;
+    border-radius: 5px;
     left: 50vw;
