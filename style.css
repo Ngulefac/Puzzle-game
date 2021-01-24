@@ -92,3 +92,14 @@ h1 {
     box-sizing: border-box;
     transition: all 0.1s linear;
 }
+
+.close:before,
+.close:after {
+    content: " ";
+    width: 27px;
+    height: 1px;
+    background: tomato;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
