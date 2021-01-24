@@ -280,3 +280,8 @@ h1 {
 .contacts-links svg {
     margin: 0 5px;
 }
+
+.contacts-links svg:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
