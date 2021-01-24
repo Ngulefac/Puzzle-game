@@ -110,3 +110,8 @@ h1 {
 .close:after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+
+.close:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+}
