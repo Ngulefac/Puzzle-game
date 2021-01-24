@@ -80,3 +80,10 @@ h1 {
     opacity: 1;
     transition: visibility 0s, opacity 0.1s linear;
 }
+
+.close {
+    position: absolute;
+    border: 1px solid tomato;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
