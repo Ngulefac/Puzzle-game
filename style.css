@@ -74,3 +74,9 @@ h1 {
     border: 2px solid steelblue;
     border-radius: 5px;
     left: 50vw;
+    box-shadow: 0 0 9999px 9999px rgba(70, 130, 180, 0.38);
+    z-index: 10;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.1s linear;
+}
