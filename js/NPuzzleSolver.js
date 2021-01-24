@@ -9,3 +9,11 @@ function NPuzzleSolver(toSolve) {
 	this.solution = [];
 	this.originalGrid = toSolve;
 }
+
+NPuzzleSolver.prototype.setupSolver = function() {
+	this.numbers = [];
+	this.fixed = [];
+	this.grid = [];
+	for(var i = 0; i < this.originalGrid.length; i++) {
+		this.fixed[i] = [];
+		this.grid[i] = [];
