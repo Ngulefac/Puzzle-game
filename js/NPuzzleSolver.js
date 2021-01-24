@@ -83,3 +83,8 @@ NPuzzleSolver.prototype.solveRow = function(size) {
 NPuzzleSolver.prototype.solveColumn = function(size) {
 	var colNumber = this.grid.length - size;
 	// use column number as this is the starting row
+	for(var i = colNumber; i < this.grid.length - 2; i++) {
+		var number = i * this.grid.length + 1 + colNumber;
+		this.moveNumberTowards(number, { x : colNumber, y : i});
+		this.fixed[i][colNumber] = true;
+	}
