@@ -263,3 +263,7 @@ NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
 	if(diffx < 0 && this.moveable({x : cur.x - 1, y : cur.y})) {
 		return "l";
 	}
+	// case 2, we need to move right and are not being blocked
+	if(diffx > 0 && this.moveable({x : cur.x + 1, y : cur.y})) {
+		return "r";
+	}
