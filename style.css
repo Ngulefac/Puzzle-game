@@ -159,3 +159,10 @@ h1 {
     background: white;
 }
 
+.level {
+    width: calc(100%/3 - 4px);
+    height: calc(100%/3 - 4px);
+    cursor: pointer;
+    position: relative;
+}
+
