@@ -184,3 +184,10 @@ h1 {
     border: 2px solid gray;
     cursor: not-allowed;
 }
+
+.game-over:after {
+    content: "🏆";
+    font-size: 1em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
