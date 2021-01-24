@@ -131,3 +131,7 @@ h1 {
     position: relative;
     width: 30vw;
     height: 30vw;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 10px auto;
+    border: 2px solid steelblue;
