@@ -231,3 +231,11 @@ h1 {
     font-size: 3em;
     display: block;
 }
+
+.win-controls div {
+    cursor: pointer;
+    border: 1px solid steelblue;
+    border-radius: 10px;
+    background: white;
+    flex: 0 0 30%;
+}
