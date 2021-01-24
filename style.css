@@ -178,3 +178,9 @@ h1 {
     background: white;
 }
 
+.level__disabled {
+    background: rgb(231, 231, 231);
+    color: gray;
+    border: 2px solid gray;
+    cursor: not-allowed;
+}
