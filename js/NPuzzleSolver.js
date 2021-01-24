@@ -379,3 +379,12 @@ NPuzzleSolver.prototype.swap = function(pos1, pos2) {
 	if(num1 != "" && num2 != "") {
 		throw "You must swap with an empty space";
 	}
+	var oldPos1 = this.numbers[num1];
+	this.numbers[num1] = this.numbers[num2];
+	this.numbers[num2] = oldPos1;
+	this.grid[pos1.y][pos1.x] = num2;
+	this.grid[pos2.y][pos2.x] = num1;
+    this.solution.push({empty : (num1 == "") ? pos1 : pos2,
+                        piece : (num1 == "") ? pos2 : pos1,
+                        number : (num1 == "") ? num2 : num1});
+}
