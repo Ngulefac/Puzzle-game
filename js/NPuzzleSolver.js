@@ -25,3 +25,9 @@ NPuzzleSolver.prototype.setupSolver = function() {
 		}
 	}
 }
+
+NPuzzleSolver.prototype.solve = function() {
+	this.setupSolver();
+	try {
+		this.solveGrid(this.grid.length);
+	} 
