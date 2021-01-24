@@ -144,3 +144,10 @@ NPuzzleSolver.prototype.moveNumberTowards = function(num, dest) {
 		}
 	}
 }
+
+NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
+	var side = (leftDirection) ? "l" : "r";
+	var other = (leftDirection) ? "r" : "l";
+	var empty = this.numbers[""];
+	var pos = this.numbers[num];
+	if(empty.y != pos.y) 
