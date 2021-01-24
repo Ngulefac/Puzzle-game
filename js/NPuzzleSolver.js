@@ -286,3 +286,19 @@ NPuzzleSolver.prototype.makeEmptyNeighborTo = function(num, boundry) {
 		}
 	}
 }
+
+NPuzzleSolver.prototype.moveEmptyTo = function(pos) {
+	// check to see if the pos is a fixed number
+	if(this.fixed[pos.y][pos.x]) {
+		throw "cannot move empty to a fixed position";
+	}
+	var counter = 1;
+	while(this.numbers[""].x != pos.x || this.numbers[""].y != pos.y) {
+		this.movingEmptyLoop(pos);
+		counter++;
+		if(counter > 100) {
+			console.log("problem trying to move the piece");
+			break;
+		}
+	}
+}
