@@ -1,4 +1,5 @@
 
+
 function NPuzzleSolver(toSolve) {
 	this.grid = [];
 	this.fixed = [];
@@ -271,8 +272,12 @@ NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
 	if(diffy < 0 && this.moveable({x : cur.x, y : cur.y - 1})) {
 		return "u";
 	}
+	// case 4, we need to move down
+	if(diffy > 0 && this.moveable({x : cur.x, y : cur.y + 1})) {
+		return "d";
 	}
 	throw "There is no valid move, the puzzle was incorrectly shuffled";
+}
 
 NPuzzleSolver.prototype.makeEmptyNeighborTo = function(num, boundry) {
 	var gotoPos = this.numbers[num];
