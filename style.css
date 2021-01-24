@@ -191,3 +191,10 @@ h1 {
     align-items: center;
     justify-content: center;
     display: flex;
+    position: absolute;
+    bottom: calc(50%/3);
+    right: calc(50%/3);
+    transform: translate(50%, 50%);
+    box-sizing: border-box;
+}
+
