@@ -56,4 +56,8 @@ else if(size == 2) {
 NPuzzleSolver.prototype.solveRow = function(size) {
 	var rowNumber = this.grid.length - size;
 	// using row number here because this is also our starting column
-	for(var i = rowNumber; i < this.grid.length - 2; i++) 
+	for(var i = rowNumber; i < this.grid.length - 2; i++) {
+		var number = rowNumber * this.grid.length + (i + 1); // calculate the number that is suppose to be at this position
+		this.moveNumberTowards(number, { x : i, y : rowNumber});
+		this.fixed[rowNumber][i] = true;
+	}
