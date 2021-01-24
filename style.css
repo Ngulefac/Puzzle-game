@@ -211,3 +211,16 @@ h1 {
     box-sizing: border-box;
 }
 
+.win-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.7em;
+}
+
+.win-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.7em;
+}
