@@ -156,16 +156,12 @@ NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
 		if(!this.moveable(this.offsetPosition(pos, location + side)) || !this.moveable(this.offsetPosition(pos, location))) {
 			this.swapE(this.offsetPosition(pos, location + other));
 			this.swapE(this.offsetPosition(pos, other));
-        
-        else {
+			this.proper3By2RotationHorizontal(pos, leftDirection);
+		} else {
 			this.swapE(this.offsetPosition(pos, location + side));
 			this.swapE(this.offsetPosition(pos, side));
-		}    this.proper3By2RotationHorizontal(pos, leftDirection);
-		} 
+		}
 	} else if((empty.x < pos.x && !leftDirection) || (empty.x > pos.x && leftDirection)) {
 		// its on the opposite that we want it on
 		this.proper3By2RotationHorizontal(pos, leftDirection);
 	}
-	// now it is in the direction we want to go so just swap
-	this.swapE(pos);
-}
