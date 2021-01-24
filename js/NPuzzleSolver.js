@@ -364,3 +364,7 @@ NPuzzleSolver.prototype.canSwap = function(pos1, pos2) {
 	// check fixed positions
 	return !(this.fixed[pos1.y][pos1.x] || this.fixed[pos2.y][pos2.x]);
 }
+
+NPuzzleSolver.prototype.swapE = function(pos) {
+	this.swap(this.numbers[""], pos);
+}
