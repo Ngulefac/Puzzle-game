@@ -66,3 +66,12 @@ NPuzzleSolver.prototype.solveRow = function(size) {
 	// position second to last number
 	this.moveNumberTowards(secondToLast, { x : this.grid.length - 1, y : rowNumber });
 	// position last number
+	this.moveNumberTowards(last, { x : this.grid.length - 1, y : rowNumber + 1 });
+	// double check to make sure they are in the right position
+	if(this.numbers[secondToLast].x != this.grid.length - 1 || this.numbers[secondToLast].y != rowNumber ||
+		this.numbers[last].x != this.grid.length - 1 || this.numbers[last].y != rowNumber + 1) {
+			// the ordering has messed up
+			this.moveNumberTowards(secondToLast, {x : this.grid.length - 1, y : rowNumber });
+			this.moveNumberTowards(last, { x : this.grid.length - 2, y : rowNumber });
+			this.moveEmptyTo({ x : this.grid.length - 2, y : rowNumber + 1 });
+			// the numbers will be right next to each other
