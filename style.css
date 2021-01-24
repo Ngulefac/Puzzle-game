@@ -262,3 +262,9 @@ h1 {
 }
 
 /* Game Stats */
+
+.game-stats {
+    text-align: center;
+    margin: 15px auto;
+    font-size: 1.1em;
+}
