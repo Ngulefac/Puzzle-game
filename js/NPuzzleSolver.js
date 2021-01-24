@@ -168,3 +168,17 @@ NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
 	// now it is in the direction we want to go so just swap
 	this.swapE(pos);
 }
+NPuzzleSolver.prototype.proper3By2RotationHorizontal = function(pos, leftDirection) {
+	var side = (leftDirection) ? "l" : "r";
+	var other = (leftDirection) ? "r" : "l";
+	var location = "u"; // assume up as default
+	if(this.moveable(this.offsetPosition(pos, "d" + side)) && this.moveable(this.offsetPosition(pos, "d")) && this.moveable(this.offsetPosition(pos, "d" + other))) {
+		location = "d";
+	} else if(!this.moveable(this.offsetPosition(pos, "u" + side)) || !this.moveable(this.offsetPosition(pos, "u")) || !this.moveable(this.offsetPosition(pos, "u" + other))) {
+		throw "unable to move up all spots fixed";
+	}
+	this.swapE(this.offsetPosition(pos, location + other));
+	this.swapE(this.offsetPosition(pos, location));
+	this.swapE(this.offsetPosition(pos, location + side));
+	this.swapE(this.offsetPosition(pos, side));
+}
