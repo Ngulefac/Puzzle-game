@@ -157,5 +157,8 @@ NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
 			this.swapE(this.offsetPosition(pos, location + other));
 			this.swapE(this.offsetPosition(pos, other));
         
-            this.proper3By2RotationHorizontal(pos, leftDirection);
+        else {
+			this.swapE(this.offsetPosition(pos, location + side));
+			this.swapE(this.offsetPosition(pos, side));
+		}    this.proper3By2RotationHorizontal(pos, leftDirection);
 		} 
