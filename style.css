@@ -135,3 +135,9 @@ h1 {
     min-height: 300px;
     margin: 10px auto;
     border: 2px solid steelblue;
+    background: rgb(235, 239, 245);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 40px;
+    color: steelblue;
+}
