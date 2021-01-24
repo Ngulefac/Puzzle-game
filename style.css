@@ -58,8 +58,6 @@ h1 {
     box-shadow: none;
     transform: translateY(0);
 }
-
-
 .controls .saved:after {
    content: 'd';
 }
