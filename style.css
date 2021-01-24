@@ -50,3 +50,11 @@ h1 {
     transform: translateY(2px);
 }
 
+.controls button:disabled {
+    cursor: not-allowed;
+    background: rgb(231, 231, 231);
+    color: gray;
+    border: 2px solid gray;
+    box-shadow: none;
+    transform: translateY(0);
+}
