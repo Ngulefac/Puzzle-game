@@ -62,3 +62,9 @@ h1 {
    content: 'd';
 }
 /* Popups*/
+
+.popup {
+    width: 280px;
+    position: fixed;
+    top: 40px;
+    left: 50vw;
