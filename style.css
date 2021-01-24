@@ -107,3 +107,6 @@ h1 {
 .close:before {
     transform: translate(-50%, -50%) rotate(45deg);
 }
+.close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
