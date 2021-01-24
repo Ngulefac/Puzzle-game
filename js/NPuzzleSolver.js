@@ -306,3 +306,13 @@ NPuzzleSolver.prototype.movingEmptyLoop = function(pos) {
 	var empty = this.numbers[""];
 	var diffx = empty.x - pos.x;
 	var diffy = empty.y - pos.y;
+	if(diffx < 0 && this.canSwap(empty, this.offsetPosition(empty, "r"))) {
+		this.swap(empty, this.offsetPosition(empty, "r"));
+	} else if(diffx > 0 && this.canSwap(empty, this.offsetPosition(empty, "l"))) {
+		this.swap(empty, this.offsetPosition(empty, "l"));
+	} else if(diffy < 0 && this.canSwap(empty, this.offsetPosition(empty, "d"))) {
+		this.swap(empty, this.offsetPosition(empty, "d"));
+	} else if(diffy > 0 && this.canSwap(empty, this.offsetPosition(empty, "u"))) {
+		this.swap(empty, this.offsetPosition(empty, "u"));
+	}
+}
