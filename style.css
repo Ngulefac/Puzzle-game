@@ -357,3 +357,7 @@ input[type="button"]:active {
     display: inline-block;
     animation: rotating infinite 1s linear;
 }
+
+.container .none {
+    display: none;
+}
