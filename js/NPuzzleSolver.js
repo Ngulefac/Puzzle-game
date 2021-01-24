@@ -37,3 +37,10 @@ NPuzzleSolver.prototype.solve = function() {
 	return this.solution;
 }
 
+NPuzzleSolver.prototype.solveGrid = function(size) {
+	if(size > 2) {
+		// pattern solve nxn squares greater than 2x2
+		this.solveRow(size); // solve the upper row first
+		this.solveColumn(size); // solve the left column next
+		this.solveGrid(size - 1); // now we can solve the sub (n-1)x(n-1) puzzle
+	} 
