@@ -368,3 +368,14 @@ NPuzzleSolver.prototype.canSwap = function(pos1, pos2) {
 NPuzzleSolver.prototype.swapE = function(pos) {
 	this.swap(this.numbers[""], pos);
 }
+
+NPuzzleSolver.prototype.swap = function(pos1, pos2) {
+	var num1 = this.grid[pos1.y][pos1.x];
+	var num2 = this.grid[pos2.y][pos2.x];
+	// guard against illegal moves
+	if(!this.areNeighbors(num1, num2)) {
+		throw "These numbers are not neighbors and cannot be swapped";
+	}
+	if(num1 != "" && num2 != "") {
+		throw "You must swap with an empty space";
+	}
