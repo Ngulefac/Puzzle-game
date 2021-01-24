@@ -248,3 +248,7 @@ h1 {
 .win-controls div:active {
     transform: translateY(0);
 }
+
+.win-controls__all:after {
+    content: "✸";
+}
