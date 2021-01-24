@@ -113,3 +113,13 @@ NPuzzleSolver.prototype.solveColumn = function(size) {
 	this.specialLeftBottomRotation(colNumber);
 	// now the column is solved
 }
+
+NPuzzleSolver.prototype.applyRelativeMoveList = function(pos, list) {
+	for(var i = 0; i < list.length; i++) {
+		if(list[i] == "") {
+			this.swapE(pos);
+		} else {
+			this.swapE(this.offsetPosition(pos, list[i]));
+		}
+	}
+}
