@@ -173,3 +173,8 @@ h1 {
     text-align: center;
 }
 
+.level__enabled {
+    border-width: 2px;
+    background: white;
+}
+
