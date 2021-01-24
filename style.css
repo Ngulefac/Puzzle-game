@@ -244,3 +244,7 @@ h1 {
     transform: translateY(-2px);
     box-shadow: 1px 3px 3px 0 #b9b9b9a8;
 }
+
+.win-controls div:active {
+    transform: translateY(0);
+}
