@@ -335,3 +335,9 @@ input[type="button"]:active {
 
 
 /* Additional */
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all, 0.1s linear;
+}
