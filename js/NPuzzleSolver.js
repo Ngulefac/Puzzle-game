@@ -301,3 +301,8 @@ NPuzzleSolver.prototype.moveEmptyTo = function(pos) {
 		}
 	}
 }
+
+NPuzzleSolver.prototype.movingEmptyLoop = function(pos) {
+	var empty = this.numbers[""];
+	var diffx = empty.x - pos.x;
+	var diffy = empty.y - pos.y;
