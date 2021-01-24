@@ -150,4 +150,12 @@ NPuzzleSolver.prototype.rotateHorizontal = function(num, leftDirection) {
 	var other = (leftDirection) ? "r" : "l";
 	var empty = this.numbers[""];
 	var pos = this.numbers[num];
-	if(empty.y != pos.y) 
+	if(empty.y != pos.y) {
+		// the empty space is above us
+		var location = (empty.y < pos.y) ? "u" : "d";
+		if(!this.moveable(this.offsetPosition(pos, location + side)) || !this.moveable(this.offsetPosition(pos, location))) {
+			this.swapE(this.offsetPosition(pos, location + other));
+			this.swapE(this.offsetPosition(pos, other));
+        
+            this.proper3By2RotationHorizontal(pos, leftDirection);
+		} 
