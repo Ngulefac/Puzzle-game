@@ -195,9 +195,8 @@ h1 {
     bottom: calc(50%/3);
     right: calc(50%/3);
     transform: translate(50%, 50%);
+ 
     box-sizing: border-box;
 }
-
-
 /* After win controls */
 
