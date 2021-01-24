@@ -273,7 +273,6 @@ NPuzzleSolver.prototype.getDirectionToProceed = function(num, dest) {
 	}
 	}
 	throw "There is no valid move, the puzzle was incorrectly shuffled";
-}
 
 NPuzzleSolver.prototype.makeEmptyNeighborTo = function(num, boundry) {
 	var gotoPos = this.numbers[num];
