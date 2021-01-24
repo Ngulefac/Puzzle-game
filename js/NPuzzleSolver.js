@@ -80,3 +80,6 @@ NPuzzleSolver.prototype.solveRow = function(size) {
 			this.applyRelativeMoveList(pos, moveList);
 			// now we reversed them, the puzzle is solveable!
 		}
+NPuzzleSolver.prototype.solveColumn = function(size) {
+	var colNumber = this.grid.length - size;
+	// use column number as this is the starting row
