@@ -187,3 +187,7 @@ NPuzzleSolver.prototype.rotateVertical = function(num, upDirection) {
 	var toward = (upDirection) ? "u" : "d";
 	var away = (upDirection) ? "d" : "u";
 	
+	var empty = this.numbers[""];
+	var pos = this.numbers[num];
+	if(empty.x != pos.x) {
+		// its to the right or left
