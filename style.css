@@ -371,3 +371,15 @@ input[type="button"]:active {
         transform: rotate(360deg);
     }
 }
+
+@media (min-width: 768px) {
+    .board {
+        min-width: 480px;
+        min-height: 480px;
+        font-size: 60px;
+    }
+
+    .controls div {
+        min-width: 480px;
+    }
+}
