@@ -343,3 +343,7 @@ NPuzzleSolver.prototype.areNeighbors = function(first, second) {
 	var num2 = this.numbers[second];
 	return (Math.abs(num1.x - num2.x) == 1 && num1.y == num2.y) || (Math.abs(num1.y - num2.y) == 1 && num1.x == num2.x);
 }
+
+NPuzzleSolver.prototype.moveable = function(pos) {
+	return this.validPos(pos) && !this.fixed[pos.y][pos.x];
+}
