@@ -17,3 +17,11 @@ NPuzzleSolver.prototype.setupSolver = function() {
 	for(var i = 0; i < this.originalGrid.length; i++) {
 		this.fixed[i] = [];
 		this.grid[i] = [];
+		for(var j = 0; j < this.originalGrid.length; j++) {
+			var num = this.originalGrid[i][j];
+			this.grid[i][j] = num;
+			this.fixed[i][j] = false;
+			this.numbers[num] = { x : j, y : i };
+		}
+	}
+}
