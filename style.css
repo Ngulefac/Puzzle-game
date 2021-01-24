@@ -224,3 +224,10 @@ h1 {
     justify-content: space-evenly;
     font-size: 0.7em;
 } 
+
+.win-controls :after {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 3em;
+    display: block;
+}
