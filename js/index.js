@@ -123,7 +123,7 @@ function drawLeaderboard() {
         ]
     })
     document.querySelector('.leaderboard').append(table);
-    fetch('https://5f103a9700d4ab00161349f0.mockapi.io/scores')
+    fetch('scores')
         .then(response => response.json())
         .then(data => {
             data.forEach(el => {
