@@ -5,3 +5,6 @@ This is an html,css and javascript based website where you get to play this awes
 ```
 Wish you good luck winning and getting the golden award
 ```
+```
+Check the makefiles in case of any help
+```
